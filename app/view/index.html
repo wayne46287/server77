@@ -2,33 +2,31 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>程序下载中...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
     <script>
-        // 获取 URL 中的随机变量（可选，作为日志记录或安全用途）
-        function getRandomVariable() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('var'); // 获取 `var` 参数
-        }
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = ("0" + (now.getMonth() + 1)).slice(-2);
+        const day = ("0" + now.getDate()).slice(-2);
+        const hours = ("0" + now.getHours()).slice(-2);
+        const minutes = ("0" + now.getMinutes()).slice(-2);
+        const seconds = ("0" + now.getSeconds()).slice(-2);
 
-        // 自动下载文件
-        function autoDownload() {
-            const randomVariable = getRandomVariable(); // 获取随机变量
-            const downloadUrl = `https://vip.123pan.cn/1843618879/11515173?var=${randomVariable}`; // 动态构造下载链接
+        const title = `下载页面 - ${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        document.title = title;
 
-            // 自动触发下载
-            const downloadLink = document.createElement('a');
-            downloadLink.href = downloadUrl;
-            downloadLink.download = ''; // 可选：用于指定文件名
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
-        }
+        const downloadLink = "https://vip.123pan.cn/1843618879/11515173";
 
-        // 页面加载后触发下载
-        window.onload = autoDownload;
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = downloadLink;
+            }, 1000);
+        };
     </script>
 </head>
 <body>
-    <h1>程序正在下载，请稍候...</h1>
+    <h1>您将被自动跳转到下载链接...</h1>
+    <p>如果没有自动跳转，请点击以下链接：<a href="https://example.com/your-file.zip" target="_blank">下载文件</a></p>
 </body>
 </html>
